@@ -1,5 +1,7 @@
 const express = require("express");
+
 const app = express();
+
 
 const userRoutes = require("./routes/User");
 const profileRoutes = require("./routes/Profile");
@@ -22,10 +24,7 @@ database.connect();
 app.use(express.json());
 app.use(cookieParser());
 app.use(
-	cors({
-		origin:"http://localhost:3000",
-		credentials:true,
-	})
+	cors()
 )
 
 app.use(
